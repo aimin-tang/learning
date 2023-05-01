@@ -1,0 +1,43 @@
+VM:
+=====
+Sustained-use discount: (> 25% of month)
+committed-use discount: (1 or 3 years)
+preemptible: can terminate. must be < 24 hour.
+spot: can be > 24 h
+
+VPC:
+======
+* Many subnets (one for each region)
+
+routes:
+firewalls: can apply to VM tags
+
+VPC to talk to others:
+* VPC peering
+* shared VPC
+
+Cloud LB:
+=========
+Global https/ssl/tcp
+regional
+regional internal
+
+Cloud DNS
+Cloud CDN
+
+Connect Cloud:
+==============
+* IPSec (Cloud router)
+* Direct peering (in POP)
+* Carrier peering (no SLA)
+* Dedicated interconnect (private line - 99.99%)
+* partner interconnect
+
+lab:
+====
+Each project has a default network, with subnets, routes, firewall rules.
+default FW rules:
+- default-allow-icmp (any ip)
+- default-allow-rdp
+- default-allow-ssh
+- default-allow-internal (any traffic)

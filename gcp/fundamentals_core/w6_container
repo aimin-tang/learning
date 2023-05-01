@@ -1,0 +1,28 @@
+GKE:
+====
+enable: Kubernetes Engine API
+export MY_ZONE=us-east4-a
+gcloud container clusters create webfrontend --zone $MY_ZONE --num-nodes 2
+kubectl create deploy nginx --image=nginx:1.17.10
+kubectl expose deployment nginx --port 80 --type LoadBalancer
+kubectl get services: get nginx external IP. use it in browser.
+kubectl scale deployment nginx --replicas 3
+
+hybrid or multi-cloud:
+======================
+some in cloud, some on-prem
+managed by Anthos: based on K8s and GKE on-prem
+
+GKE lab (addresses):
+=====================
+vms: 
+  10.168.0.3   35.235.85.173
+  10.168.0.4   34.94.55.33
+K8s:
+  10.168.0.2   35.235.76.110
+nginx:
+$ kubectl get services
+NAME         TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)        AGE
+kubernetes   ClusterIP      10.84.0.1      <none>          443/TCP        50m
+nginx        LoadBalancer   10.84.12.110   34.94.201.231   80:31613/TCP   38m
+                                           ^^^: for browser

@@ -1,0 +1,62 @@
+Storage options:
+================
+Cloud Storage
+Cloud SQL
+CLoud Spanner
+Firestore
+Cloud Big Table
+
+Cloud storage: objects (noSQL, can have versions)
+user access:
+  - IAM (project -> bucket -> object)
+  - ACL
+* standard storage
+* nearline
+* coldline
+* archive
+Firestore (noSQL)
+
+Cloud SQL
+Cloud Spanner (SQL, high IO) 
+
+Cloud Big Table (noSQL, Big Data)
+
+lab
+====
+Cloud storage creation (gsutil):
+- export LOCATION=US
+- gsutil mb -l $LOCATION gs://$DEVSHELL_PROJECT_ID
+- gsutil cp gs://cloud-training/gcpfci/my-excellent-blog.png my-excellent-blog.png
+- gsutil cp my-excellent-blog.png gs://$DEVSHELL_PROJECT_ID/my-excellent-blog.png
+- gsutil acl ch -u allUsers:R gs://$DEVSHELL_PROJECT_ID/my-excellent-blog.png
+
+Cloud SQL creation (cloud console):
+
+test:
+======
+Cloud SQL
+On VM:
+- edit /var/www/html/index.php
+<html>
+<head><title>Welcome to my excellent blog</title></head>
+<body>
+<h1>Welcome to my excellent blog</h1>
+<?php
+ $dbserver = "CLOUDSQLIP";
+$dbuser = "blogdbuser";
+$dbpassword = "DBPASSWORD";
+// In a production blog, we would not store the MySQL
+// password in the document root. Instead, we would store it in a
+// configuration file elsewhere on the web server VM instance.
+$conn = new mysqli($dbserver, $dbuser, $dbpassword);
+if (mysqli_connect_error()) {
+        echo ("Database connection failed: " . mysqli_connect_error());
+} else {
+        echo ("Database connection succeeded.");
+}
+?>
+</body></html>
+- sudo service apache2 restart
+
+Cloud storage:
+<img src='https://storage.googleapis.com/qwiklabs-gcp-0005e186fa559a09/my-excellent-blog.png'>
