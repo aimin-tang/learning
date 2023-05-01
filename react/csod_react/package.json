@@ -1,0 +1,35 @@
+{
+  "name": "csod_react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node ./server.js",
+    "relay": "relay-compiler --src ./src --schema ./data/schema.graphql"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "relay-compiler": "^14.1.0"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^9.1.0",
+    "babel-plugin-relay": "^14.1.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "classnames": "^2.3.2",
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.6.0",
+    "graphql-relay": "^0.10.0",
+    "react-relay": "^14.1.0",
+    "webpack": "1.13.2",
+    "webpack-dev-server": "1.16.1",
+    "whatwg-fetch": "^3.6.2"
+  }
+}
