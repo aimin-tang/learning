@@ -1,0 +1,12 @@
+Region: europe-west2
+Zone: europe-west2-a/b/c
+
+Security:
+* physical access
+* HW design, secure boot
+* traffic encryption
+* IAM
+* storage encryption at rest
+* DoS protection
+* operation
+

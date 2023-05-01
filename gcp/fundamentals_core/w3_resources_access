@@ -1,0 +1,34 @@
+Hierarchy
+=========
+* resources
+* projects
+* folders
+* org nodes
+
+IAM
+=========
+a policy is:
+who       -> can do what -> on which resource
+principal -> role        -> resource
+
+deny policies always checked first
+
+* basic: owner/editor/viewer/billing_admin
+* predefined: instance admin role (start/stop/delete VM)
+* custom (more specific)
+
+service account: VM instead of person
+is an identity (eg: can add vm admin roles)
+is also a resource to apply a policy to (userA is editor/viewer)
+
+cloud identity (instead of gmail for identity):
+tool to let admin manage group user access.
+a user leaving the group can be removed.
+
+* console UI
+* marketplace -> lamp -> deploy
+* VM external IP serves web page
+* ssh into VM
+  - cd /opt/bitnami
+  - sudo sh -c 'echo "<?php phpinfo(); ?>" > apache2/htdocs/phpinfo.php'
+* http://<ext_ip>/phpinfo.php to see page.
