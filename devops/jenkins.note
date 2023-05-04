@@ -1,0 +1,9 @@
+* "java -version": 8 or 11.
+* brew install jenkins-lts
+* brew services start jenkins-lts
+* Install suggested plugins, plus Blue Ocean, Git Pipeline for Blue Ocean.
+* localhost:8080/blue (admin/admin)
+
+* brew services restart jenkins-lts
+* brew upgrade jenkins-lts
+
