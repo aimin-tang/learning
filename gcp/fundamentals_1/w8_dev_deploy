@@ -1,0 +1,8 @@
+* Cloud Source Repo
+* Cloud Function
+* Terraform
+
+Cloud Source repo: Git managed by Google
+Cloud Function: event driven, async
+Terraform: infra as code, deploy network.
+
